@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [tailwindcss()],
 
   root: "src",
+  publicDir: "../public",
   build: {
     outDir: "../dist",
     emptyOutDir: true,

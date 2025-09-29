@@ -2,21 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/film.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movie & TV Tracker</title>
   <link rel="stylesheet" href="/styles/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script type="module" src="/scripts/main.js"></script>
 </head>
-<body>
-  <header class="bg-amber-500">
-    <h1>Movie & TV Tracker</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Search</a>
-      <a href="#">Watchlist</a>
-    </nav>
-  </header>
-  <main id="app"></main>
+<body class="dark-angular-gradient min-h-screen">
+  <header id="header"></header>
+
+  <main class="container mx-auto">
+    <section class="bg-[url(/background-image.webp)] bg-cover bg-center min-h-52 h-[40vh] max-h-80">
+      <div class="bg-black/50 h-full p-6 flex flex-col justify-end">
+        <h1 class="font-semibold text-5xl">Insider</h1>
+        <p class="text-sm mt-2">2022 | Comedy horror | 1 season</p>
+
+        <div class="mt-6 flex gap-4 items-center">
+          <button class="bg-purple text-lg px-6 py-4 rounded-2xl pointer">See more</button>
+          <button class="glass-blur-gradient size-15 rounded-2xl pointer">
+            <img src="/assets/not-liked.svg" alt="Add to favourites" class="inline size-6" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto p-6 mt-6">
+      <h2 class="text-2xl font-semibold">Trending Movies</h2>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
 </body>
-<script type="module" src="/scripts/main.js"></script>
 </html>

@@ -1,1 +1,3 @@
-console.log("Main");
+import { loadHeaderAndFooter } from "./loadPartial";
+
+loadHeaderAndFooter();

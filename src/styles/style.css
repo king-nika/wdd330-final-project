@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-purple: #6100c2;
+  --color-light-purple: #7900c2;
+  --color-gray: #969696;
+}
+
+@utility dark-gradient {
+  background: linear-gradient(180deg, #37312a 49%, #191817 95%, #191817 100%);
+}
+
+@utility glass-blur-gradient {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.78)
+  );
+}
+
+@utility dark-angular-gradient {
+  background: linear-gradient(
+    90deg,
+    #6100c2 1%,
+    #191817 3%,
+    #191817 97%,
+    #6100c2 99%
+  );
+}
+
+@layer base {
+  * {
+    font-family: "Outfit", sans-serif;
+  }
+  body {
+    color: #ffffff;
+  }
+}
