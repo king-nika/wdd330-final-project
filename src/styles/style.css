@@ -16,6 +16,7 @@
     rgba(255, 255, 255, 0.62),
     rgba(255, 255, 255, 0.78)
   );
+  backdrop-filter: blur(10px);
 }
 
 @utility dark-angular-gradient {
@@ -34,5 +35,19 @@
   }
   body {
     color: #ffffff;
+  }
+  .error {
+    @apply fixed left-1/2 -translate-x-1/2 max-w-3xl w-4/5 
+         text-center text-red-600 bg-red-200 py-2 z-50 
+         rounded-lg opacity-0 transition-all duration-500;
+    top: -4rem;
+  }
+  .error.show {
+    opacity: 1;
+    top: 1rem;
+  }
+  .error.hide {
+    opacity: 0;
+    top: -4rem;
   }
 }

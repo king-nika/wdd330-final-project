@@ -32,6 +32,23 @@
 
     <section class="container mx-auto p-6 mt-6">
       <h2 class="text-2xl font-semibold">Trending Movies</h2>
+
+      <div id="movies-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+        <template>
+          <div id="container"
+            class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+            <button class="glass-blur-gradient size-8 rounded pointer absolute top-4 right-4">
+              <img src="/assets/not-liked.svg" alt="Add to favourites" class="inline size-4" />
+            </button>
+
+            <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+              <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+              <p class="text-black text-sm"></p>
+            </div>
+          </div>
+        </template>
+      </div>
     </section>
   </main>
 
