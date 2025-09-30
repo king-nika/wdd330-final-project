@@ -16,16 +16,21 @@
   <header id="header"></header>
 
   <main class="container mx-auto">
-    <section class="bg-[url(/background-image.webp)] bg-cover bg-center min-h-52 h-[40vh] max-h-80">
-      <div class="bg-black/50 h-full p-6 flex flex-col justify-end">
-        <h1 class="font-semibold text-5xl">Insider</h1>
-        <p class="text-sm mt-2">2022 | Comedy horror | 1 season</p>
+    <section class="min-h-52 h-[40vh] max-h-80 relative overflow-hidden" id="random-movie">
+      <img src="" alt="poster image" width="1166" height="455"
+        class="w-full h-full object-cover absolute inset-0 z-0 img-animate">
+
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div class="h-full p-6 flex flex-col justify-end absolute inset-0 z-10 text-animate" id="animation">
+        <h1 class="font-semibold text-5xl truncate"></h1>
+        <p class="text-sm mt-2 flex items-center"></p>
 
         <div class="mt-6 flex gap-4 items-center">
-          <button class="bg-purple text-lg px-6 py-4 rounded-2xl pointer">See more</button>
-          <button class="glass-blur-gradient size-15 rounded-2xl pointer">
+          <button class="bg-purple text-lg px-6 py-4 rounded-2xl cursor-pointer">See more</button>
+          <!-- <button class="glass-blur-gradient size-15 rounded-2xl cursor-pointer">
             <img src="/assets/not-liked.svg" alt="Add to favourites" class="inline size-6" />
-          </button>
+          </button> -->
         </div>
       </div>
     </section>
@@ -38,10 +43,6 @@
         <template>
           <div id="container"
             class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
-            <button class="glass-blur-gradient size-8 rounded pointer absolute top-4 right-4">
-              <img src="/assets/not-liked.svg" alt="Add to favourites" class="inline size-4" />
-            </button>
-
             <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
               <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
               <p class="text-black text-sm"></p>

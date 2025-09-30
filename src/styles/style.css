@@ -50,4 +50,35 @@
     opacity: 0;
     top: -4rem;
   }
+  .img-animate {
+    animation: animate-img alternate 3s infinite linear;
+    animation-play-state: paused;
+  }
+  .text-animate {
+    animation: animate-text forwards 3s infinite linear;
+    animation-play-state: paused;
+  }
+
+  @keyframes animate-img {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  @keyframes animate-text {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
