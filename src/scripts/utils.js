@@ -1,3 +1,6 @@
+// Base URL for fetching partials and other resources
+export const base = import.meta.env.BASE_URL;
+
 export const showError = (message = "Something went wrong") => {
   const errorContainer = document.createElement("div");
   errorContainer.classList.add("error");

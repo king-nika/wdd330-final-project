@@ -1,4 +1,4 @@
-const base = import.meta.env.BASE_URL;
+import { base } from "./utils";
 
 export const loadPartial = async (id, file) => {
   const container = document.getElementById(id);
