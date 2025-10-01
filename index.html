@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/film.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie & TV Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/main-U22_iLO0.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-CbxYlj68.css">
+</head>
+<body class="dark-angular-gradient min-h-screen">
+  <header id="header"></header>
+
+  <main class="container mx-auto">
+    <section class="min-h-52 h-[40vh] max-h-80 relative overflow-hidden" id="random-movie">
+      <img src="" alt="poster image" width="1166" height="455"
+        class="w-full h-full object-cover absolute inset-0 z-0 img-animate">
+
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div class="h-full p-6 flex flex-col justify-end absolute inset-0 z-10 text-animate" id="animation">
+        <h1 class="font-semibold text-5xl truncate"></h1>
+        <p class="text-sm mt-2 flex items-center"></p>
+
+        <div class="mt-6 flex gap-4 items-center">
+          <button class="bg-purple text-lg px-6 py-4 rounded-2xl cursor-pointer">See more</button>
+          <!-- <button class="glass-blur-gradient size-15 rounded-2xl cursor-pointer">
+            <img src="/assets/not-liked.svg" alt="Add to favourites" class="inline size-6" />
+          </button> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto p-6 mt-6">
+      <h2 class="text-2xl font-semibold">
+        <img src="/assets/trending-up.svg" alt="Trending Movies" class="inline size-6" />
+        Trending Movies
+      </h2>
+
+      <div id="movies-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+        <template>
+          <div id="container"
+            class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+            <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+              <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+              <p class="text-black text-sm"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+</body>
+</html>
