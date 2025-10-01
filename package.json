@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
