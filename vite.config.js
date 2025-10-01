@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  base: "/wdd330-final-project/",
 
   root: "src",
   publicDir: "../public",
