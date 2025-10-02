@@ -5,12 +5,14 @@
   <link rel="icon" type="image/svg+xml" href="/wdd330-final-project/assets/film.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movie & TV Tracker</title>
+  <meta name="description" content="A web app to track movies and TV shows you want to watch." />
+  <meta name="author" content="Akingbayi Ojo" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/wdd330-final-project/assets/main-DJN1mSXN.js"></script>
-  <link rel="stylesheet" crossorigin href="/wdd330-final-project/assets/main-CRcy09yW.css">
+  <script type="module" crossorigin src="/wdd330-final-project/assets/main-DAoljl32.js"></script>
+  <link rel="stylesheet" crossorigin href="/wdd330-final-project/assets/main-DLxM0Q1h.css">
 </head>
 <body class="dark-angular-gradient min-h-screen">
   <header class="container mx-auto" id="header"></header>
@@ -42,15 +44,15 @@
       </h2>
 
       <div id="movies-container"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4 cursor-pointer">
         <template>
-          <div id="container"
+          <a href="movie/" id="container"
             class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
             <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
               <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
               <p class="text-black text-sm"></p>
             </div>
-          </div>
+          </a>
         </template>
       </div>
     </section>
