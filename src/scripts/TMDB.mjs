@@ -61,4 +61,23 @@ export class TMDB {
       return null;
     }
   }
+
+  async getMoviesById(ids) {
+    try {
+      const promises = ids.map((id) =>
+        fetch(
+          `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&language=en-US`
+        ).then((res) => res.json())
+      );
+
+      const movies = await Promise.all(promises);
+
+      // filter out invalid responses (like 404 errors)
+      return movies.filter((movie) => movie && movie.id);
+    } catch (error) {
+      console.error("Error fetching movies:", error);
+      showError("Failed to load movies.");
+      return [];
+    }
+  }
 }

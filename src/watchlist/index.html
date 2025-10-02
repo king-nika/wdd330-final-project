@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/film.svg" />
+    <title>Movie details</title>
+    <meta name="description" content="See the list of your favourite movies and TV shows. Easy and quick." />
+    <meta name="author" content="Akingbayi Ojo" />
+
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="/scripts/watchlist.js"></script>
+</head>
+<body class="dark-angular-gradient min-h-screen">
+    <header class="container mx-auto" id="header"></header>
+
+    <main class="container p-4 mx-auto">
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold my-4">Your Saved Movies</h1>
+
+        <div id="movies-container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4 cursor-pointer">
+            <template>
+                <a href="movie/" id="container"
+                    class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+                    <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+                        <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+                        <p class="text-black text-sm"></p>
+                    </div>
+                </a>
+            </template>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+</body>
+</html>

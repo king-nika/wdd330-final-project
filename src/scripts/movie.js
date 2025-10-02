@@ -1,6 +1,13 @@
 import { loadHeaderAndFooter } from "./loadPartial";
 import { TMDB } from "./TMDB.mjs";
-import { formatRuntime, getParam } from "./utils";
+import {
+  formatRuntime,
+  getLocalStorage,
+  getParam,
+  imgBase,
+  setLocalStorage,
+  showSuccess,
+} from "./utils";
 import { YouTube } from "./YouTube.mjs";
 
 loadHeaderAndFooter();
@@ -8,11 +15,12 @@ loadHeaderAndFooter();
 const youtubeApiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 const tmdbApiKey = import.meta.env.VITE_TMDB_API_KEY;
 
+let watchlist = getLocalStorage("watchlist") || [];
+
 const tmdb = new TMDB(tmdbApiKey);
 
 const id = getParam("id");
 const movieDetails = await tmdb.getMovieDetails(id);
-console.log(movieDetails);
 
 const youtube = new YouTube(youtubeApiKey, movieDetails.title);
 const trailerUrl = await youtube.getTrailer();
@@ -20,6 +28,35 @@ const trailerUrl = await youtube.getTrailer();
 const displayMovieDetails = (movie, trailerUrl) => {
   const iframe = document.querySelector("iframe");
   iframe.src = trailerUrl;
+
+  const favouriteBtn = document.getElementById("favourite-btn");
+
+  const updateFavouriteIcon = () => {
+    const isInWatchlist = watchlist.includes(movie.id);
+    favouriteBtn.querySelector("img").src = isInWatchlist
+      ? `${imgBase}assets/liked.svg`
+      : `${imgBase}assets/not-liked.svg`;
+  };
+
+  updateFavouriteIcon();
+
+  favouriteBtn.addEventListener("click", () => {
+    const isInWatchlist = watchlist.includes(movie.id);
+
+    if (isInWatchlist) {
+      // remove
+      watchlist = watchlist.filter((id) => id !== movie.id);
+    } else {
+      // add
+      watchlist.push(movie.id);
+    }
+
+    setLocalStorage("watchlist", watchlist);
+    updateFavouriteIcon();
+    showSuccess(
+      isInWatchlist ? "Removed from your watchlist" : "Added to your watchlist"
+    );
+  });
 
   const hero = document.getElementById("hero");
 

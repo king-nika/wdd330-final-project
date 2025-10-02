@@ -1,8 +1,17 @@
 import { loadHeaderAndFooter } from "./loadPartial";
 import { TMDB } from "./TMDB.mjs";
-import { displayMovies, imgBase } from "./utils";
+import {
+  displayMovies,
+  getLocalStorage,
+  imgBase,
+  setLocalStorage,
+} from "./utils";
 
 loadHeaderAndFooter();
+
+if (!getLocalStorage("watchlist")) {
+  setLocalStorage("watchlist", []);
+}
 
 const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 const tmdb = new TMDB(apiKey);
@@ -36,6 +45,11 @@ const displayRandomMovie = async (movies) => {
   )} | <span class="flex items-center gap-1"><img src="${imgBase}assets/star.svg" class="size-5" alt="Rating" /> ${randomMovie.vote_average.toFixed(
     1
   )}</span>`;
+
+  const seeMoreBtn = randomContainer.querySelector("button");
+  seeMoreBtn.onclick = () => {
+    window.location.href = `movie/?id=${randomMovie.id}`;
+  };
 };
 
 displayMovies(results, "template", genreMap);

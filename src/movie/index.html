@@ -24,7 +24,8 @@
 
         <section class="grid gap-6 grid-cols-1 md:grid-cols-2">
             <div id="hero" class="w-full mx-auto overflow-hidden rounded-2xl relative h-[50rem] md:h-auto">
-                <img src="" alt="Movie Poster" class="w-full h-auto block shadow-lg object-cover absolute inset-0" />
+                <img src="" alt="Movie Poster"
+                    class="w-full h-auto block shadow-lg object-cover object-center absolute inset-0" />
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.5)] to-black"></div>
 
                 <div class="w-full h-full p-4 sm:p-8 lg:p-12 relative z-10 flex flex-col justify-end gap-4">
@@ -39,6 +40,11 @@
                     <p id="genres" class="text-lg sm:text-xl lg:text-2xl"></p>
                     <p id="date"></p>
                     <p id="runtime"></p>
+
+                    <button class="glass-blur-gradient size-15 rounded-2xl cursor-pointer absolute top-4 right-4"
+                        id="favourite-btn">
+                        <img src="assets/not-liked.svg" alt="Add/Remove from watchlist" class="inline size-6" />
+                    </button>
                 </div>
             </div>
 

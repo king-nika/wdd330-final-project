@@ -36,17 +36,23 @@
   body {
     color: #ffffff;
   }
-  .error {
+  .toast {
     @apply fixed left-1/2 -translate-x-1/2 max-w-3xl w-4/5 
-         text-center text-red-600 bg-red-200 py-2 z-50 
+         text-center py-2 z-50 
          rounded-lg opacity-0 transition-all duration-500;
     top: -4rem;
   }
-  .error.show {
+  .error {
+    @apply text-red-600 bg-red-200;
+  }
+  .success {
+    @apply text-green-600 bg-green-200;
+  }
+  .toast.show {
     opacity: 1;
     top: 1rem;
   }
-  .error.hide {
+  .toast.hide {
     opacity: 0;
     top: -4rem;
   }

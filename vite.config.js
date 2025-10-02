@@ -14,6 +14,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
+        watchlist: resolve(__dirname, "src/watchlist/index.html"),
+        movie: resolve(__dirname, "src/movie/index.html"),
       },
     },
   },
