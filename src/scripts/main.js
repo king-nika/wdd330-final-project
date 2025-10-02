@@ -1,6 +1,6 @@
 import { loadHeaderAndFooter } from "./loadPartial";
-import { TMDB } from "./tmdb.mjs";
-import { base } from "./utils";
+import { TMDB } from "./TMDB.mjs";
+import { displayMovies, imgBase } from "./utils";
 
 loadHeaderAndFooter();
 
@@ -8,45 +8,13 @@ const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 const tmdb = new TMDB(apiKey);
 const results = await tmdb.getTrendingMovies();
 
-const displayMovies = async (movies) => {
-  const template = document.querySelector("template");
-  const moviesContainer = document.getElementById("movies-container");
-
-  if (!movies || movies.length === 0) {
-    moviesContainer.innerHTML = "<p>No movies found.</p>";
-    return;
-  }
-
-  const genresArray = await tmdb.getGenres();
-  const genreMap = Object.fromEntries(genresArray.map((g) => [g.id, g.name]));
-
-  movies.forEach((movie) => {
-    const clone = template.content.cloneNode(true);
-
-    const h1 = clone.querySelector("h1");
-    const container = clone.querySelector("#container");
-    const p = clone.querySelector("p");
-
-    const genreNames = movie.genre_ids.map((id) => genreMap[id]);
-    const releaseYear = movie.release_date
-      ? new Date(movie.release_date).getFullYear()
-      : "N/A";
-    p.textContent = `${releaseYear} | ${genreNames.join(", ")}`;
-
-    container.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
-    h1.textContent = movie.title;
-
-    moviesContainer.appendChild(clone);
-  });
-};
+const genresArray = await tmdb.getGenres();
+const genreMap = Object.fromEntries(genresArray.map((g) => [g.id, g.name]));
 
 const displayRandomMovie = async (movies) => {
   if (!movies || movies.length === 0) {
     return;
   }
-
-  const genresArray = await tmdb.getGenres();
-  const genreMap = Object.fromEntries(genresArray.map((g) => [g.id, g.name]));
 
   const randomIndex = Math.floor(Math.random() * movies.length);
   const randomMovie = movies[randomIndex];
@@ -65,12 +33,12 @@ const displayRandomMovie = async (movies) => {
   h1.textContent = randomMovie.title;
   p.innerHTML = `${releaseYear} | ${genreNames.join(
     ", "
-  )} | <span class="flex items-center gap-1"><img src="${base}assets/star.svg" class="size-5" alt="Rating" /> ${randomMovie.vote_average.toFixed(
+  )} | <span class="flex items-center gap-1"><img src="${imgBase}assets/star.svg" class="size-5" alt="Rating" /> ${randomMovie.vote_average.toFixed(
     1
   )}</span>`;
 };
 
-displayMovies(results);
+displayMovies(results, "template", genreMap);
 displayRandomMovie(results);
 setInterval(() => {
   const randomContainer = document.getElementById("random-movie");

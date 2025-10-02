@@ -1,11 +1,11 @@
-import { base } from "./utils";
+import { imgBase } from "./utils";
 
 export const loadPartial = async (id, file) => {
   const container = document.getElementById(id);
 
   if (container) {
     try {
-      const response = await fetch(`${base}partials/${file}`);
+      const response = await fetch(`${imgBase}partials/${file}`);
       const html = await response.text();
       container.innerHTML = html;
     } catch (error) {

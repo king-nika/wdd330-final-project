@@ -43,4 +43,22 @@ export class TMDB {
       return [];
     }
   }
+
+  async getMovieDetails(id) {
+    try {
+      const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&language=en-US`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        showError("Failed to fetch movie details.");
+        return null;
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+      showError("Failed to load movie details.");
+      return null;
+    }
+  }
 }
