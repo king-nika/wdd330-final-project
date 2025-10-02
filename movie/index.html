@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/wdd330-final-project/assets/film.svg" />
+    <title>Movie details</title>
+    <meta name="description" content="A web app to track movies and TV shows you want to watch." />
+    <meta name="author" content="Akingbayi Ojo" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/wdd330-final-project/assets/movie-BQip0ueh.js"></script>
+  <link rel="modulepreload" crossorigin href="/wdd330-final-project/assets/TMDB-eSGXeQn4.js">
+  <link rel="stylesheet" crossorigin href="/wdd330-final-project/assets/TMDB-DnhNVqow.css">
+</head>
+<body class="dark-angular-gradient min-h-screen">
+    <header class="container mx-auto" id="header"></header>
+
+    <main class="container mx-auto p-4">
+        <iframe src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            class="w-full max-w-4xl mx-auto aspect-video rounded-2xl shadow-lg mb-6" allowfullscreen></iframe>
+
+        <section class="grid gap-6 grid-cols-1 md:grid-cols-2">
+            <div id="hero" class="w-full mx-auto overflow-hidden rounded-2xl relative h-[50rem] md:h-auto">
+                <img src="" alt="Movie Poster"
+                    class="w-full h-auto block shadow-lg object-cover object-center absolute inset-0" />
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(0,0,0,0.5)] to-black"></div>
+
+                <div class="w-full h-full p-4 sm:p-8 lg:p-12 relative z-10 flex flex-col justify-end gap-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+                        <h1 class="font-semibold text-3xl sm:text-4xl lg:text-5xl"></h1>
+                        <p id="rating"
+                            class="flex items-center gap-2 text-lg sm:text-xl lg:text-2xl font-medium text-yellow-400">
+                            <img src="/wdd330-final-project/assets/star.svg" alt="Rating Star" class="size-6">
+                        </p>
+                    </div>
+
+                    <p id="genres" class="text-lg sm:text-xl lg:text-2xl"></p>
+                    <p id="date"></p>
+                    <p id="runtime"></p>
+
+                    <button class="glass-blur-gradient size-15 rounded-2xl cursor-pointer absolute top-4 right-4"
+                        id="favourite-btn">
+                        <img src="assets/not-liked.svg" alt="Add/Remove from watchlist" class="inline size-6" />
+                    </button>
+                </div>
+            </div>
+
+            <div id="details">
+                <h2 class="font-bold text-lg sm:text-2xl md:text-4xl lg:text-4xl mb-4">Overview</h2>
+                <h3 id="overview" class="text-sm sm:text-sm md:text-lg lg:text-xl"></h3>
+
+                <h2 class="font-bold text-lg sm:text-2xl md:text-4xl lg:text-4xl my-4">Production Companies</h2>
+                <ul id="companies" class="ml-4"></ul>
+
+                <h2 class="font-bold text-sm sm:text-lg md:text-xl lg:text-2xl mt-4 mb-2">Budget</h2>
+                <p id="budget" class="text-sm sm:text-sm md:text-lg lg:text-xl font-semibold"></p>
+
+                <h2 class="font-bold text-sm sm:text-lg md:text-xl lg:text-2xl mt-4 mb-2">Revenue Generated</h2>
+                <p id="revenue" class="text-sm sm:text-sm md:text-lg lg:text-xl font-semibold"></p>
+
+                <h2 class="font-bold text-sm sm:text-lg md:text-xl lg:text-2xl mt-4 mb-2">Production Country</h2>
+                <p id="origin-country" class="text-sm sm:text-sm md:text-lg lg:text-xl font-semibold"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+</body>
+</html>
