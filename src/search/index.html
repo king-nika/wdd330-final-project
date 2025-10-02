@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/film.svg" />
+    <title>Movie details</title>
+    <meta name="description" content="Search for your favourite movies and TV shows." />
+    <meta name="author" content="Akingbayi Ojo" />
+
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="/scripts/search.js"></script>
+</head>
+<body class="dark-angular-gradient min-h-screen">
+    <header class="container mx-auto" id="header"></header>
+
+    <main class="container p-4 mx-auto">
+        <div class="flex items-center gap-4 max-w-4xl border border-gray-50 px-4 rounded-full mx-auto">
+            <img src="../assets/search.svg" alt="search icon" class="size-6" />
+            <input type="text" placeholder="Search for movies or TV shows..." id="search-input"
+                class="py-4 px-2 w-full outline-0" />
+        </div>
+
+        <div id="movies-container"
+            class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
+            <p class="text-center text-gray-400 my-8">Please enter a search term.</p>
+        </div>
+
+        <template>
+            <a href="movie/" id="container"
+                class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+                <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+                    <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+                    <p class="text-black text-sm"></p>
+                </div>
+            </a>
+        </template>
+    </main>
+
+    <footer id="footer"></footer>
+</body>
+</html>

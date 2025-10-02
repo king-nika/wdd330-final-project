@@ -1,5 +1,5 @@
 // Base URL for fetching partials and other resources
-export const imgBase = import.meta.env.BASE_URL;
+export const base = import.meta.env.BASE_URL;
 
 export const showError = (message = "Something went wrong") => {
   const errorContainer = document.createElement("div");
@@ -65,7 +65,7 @@ export const displayMovies = async (movies, selector, genreMap) => {
       : "N/A";
     p.textContent = `${releaseYear} | ${genreNames.join(", ")}`;
 
-    container.href = `movie/?id=${movie.id}`;
+    container.href = `${base}movie/?id=${movie.id}`;
     container.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
     h1.textContent = movie.title;
 
@@ -96,7 +96,7 @@ export const displayMoviesWatchlist = async (movies, selector) => {
       .map((genre) => genre.name)
       .join(", ")}`;
 
-    container.href = `movie/?id=${movie.id}`;
+    container.href = `${base}movie/?id=${movie.id}`;
     container.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
     h1.textContent = movie.title;
 
@@ -122,4 +122,14 @@ export const setLocalStorage = (key, value) => {
 export const getLocalStorage = (key) => {
   const value = localStorage.getItem(key);
   return value ? JSON.parse(value) : null;
+};
+
+export const debounce = (func, delay = 300) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 };

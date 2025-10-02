@@ -16,6 +16,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         watchlist: resolve(__dirname, "src/watchlist/index.html"),
         movie: resolve(__dirname, "src/movie/index.html"),
+        search: resolve(__dirname, "src/search/index.html"),
       },
     },
   },

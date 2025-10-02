@@ -4,7 +4,7 @@ import {
   formatRuntime,
   getLocalStorage,
   getParam,
-  imgBase,
+  base,
   setLocalStorage,
   showSuccess,
 } from "./utils";
@@ -34,8 +34,8 @@ const displayMovieDetails = (movie, trailerUrl) => {
   const updateFavouriteIcon = () => {
     const isInWatchlist = watchlist.includes(movie.id);
     favouriteBtn.querySelector("img").src = isInWatchlist
-      ? `${imgBase}assets/liked.svg`
-      : `${imgBase}assets/not-liked.svg`;
+      ? `${base}assets/liked.svg`
+      : `${base}assets/not-liked.svg`;
   };
 
   updateFavouriteIcon();

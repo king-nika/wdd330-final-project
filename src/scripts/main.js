@@ -1,11 +1,6 @@
 import { loadHeaderAndFooter } from "./loadPartial";
 import { TMDB } from "./TMDB.mjs";
-import {
-  displayMovies,
-  getLocalStorage,
-  imgBase,
-  setLocalStorage,
-} from "./utils";
+import { displayMovies, getLocalStorage, base, setLocalStorage } from "./utils";
 
 loadHeaderAndFooter();
 
@@ -42,7 +37,7 @@ const displayRandomMovie = async (movies) => {
   h1.textContent = randomMovie.title;
   p.innerHTML = `${releaseYear} | ${genreNames.join(
     ", "
-  )} | <span class="flex items-center gap-1"><img src="${imgBase}assets/star.svg" class="size-5" alt="Rating" /> ${randomMovie.vote_average.toFixed(
+  )} | <span class="flex items-center gap-1"><img src="${base}assets/star.svg" class="size-5" alt="Rating" /> ${randomMovie.vote_average.toFixed(
     1
   )}</span>`;
 

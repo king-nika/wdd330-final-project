@@ -80,4 +80,24 @@ export class TMDB {
       return [];
     }
   }
+
+  async searchMovies(query) {
+    try {
+      const url = `${this.baseUrl}/search/movie?api_key=${
+        this.apiKey
+      }&language=en-US&query=${encodeURIComponent(query)}&page=1`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        showError("Failed to search movies.");
+        return [];
+      }
+
+      const data = await response.json();
+      return data.results;
+    } catch (error) {
+      console.error("Error searching movies:", error);
+      showError("Failed to search movies.");
+      return [];
+    }
+  }
 }
