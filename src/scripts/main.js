@@ -47,7 +47,7 @@ const displayRandomMovie = async (movies) => {
   };
 };
 
-displayMovies(results, "template", genreMap);
+displayMovies(results, "template", genreMap, "#movies-container");
 displayRandomMovie(results);
 setInterval(() => {
   const randomContainer = document.getElementById("random-movie");

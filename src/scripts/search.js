@@ -28,6 +28,6 @@ searchInput.addEventListener(
 
     moviesContainer.classList.add("grid");
     const movies = await tmdb.searchMovies(query);
-    displayMovies(movies, "template", genreMap);
+    displayMovies(movies, "template", genreMap, "#movies-container");
   }, 500)
 );

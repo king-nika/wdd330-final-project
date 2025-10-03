@@ -43,9 +43,14 @@ export const showSuccess = (message = "Operation successful") => {
   }, 3500);
 };
 
-export const displayMovies = async (movies, selector, genreMap) => {
-  const template = document.querySelector(selector);
-  const moviesContainer = document.getElementById("movies-container");
+export const displayMovies = async (
+  movies,
+  templateSelector,
+  genreMap,
+  containerSelector
+) => {
+  const template = document.querySelector(templateSelector);
+  const moviesContainer = document.querySelector(containerSelector);
 
   if (!movies || movies.length === 0) {
     moviesContainer.innerHTML = "<p>No movies found.</p>";

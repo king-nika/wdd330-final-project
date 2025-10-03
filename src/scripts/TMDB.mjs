@@ -100,4 +100,22 @@ export class TMDB {
       return [];
     }
   }
+
+  async getSimilarMovies(id) {
+    try {
+      const url = `${this.baseUrl}/movie/${id}/similar?api_key=${this.apiKey}&language=en-US&page=1`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        showError("Failed to fetch similar movies.");
+        return [];
+      }
+
+      const data = await response.json();
+      return data.results;
+    } catch (error) {
+      console.error("Error fetching similar movies:", error);
+      showError("Failed to load similar movies.");
+      return [];
+    }
+  }
 }

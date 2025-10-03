@@ -7,6 +7,8 @@ import {
   base,
   setLocalStorage,
   showSuccess,
+  showError,
+  displayMovies,
 } from "./utils";
 import { YouTube } from "./YouTube.mjs";
 
@@ -21,6 +23,11 @@ const tmdb = new TMDB(tmdbApiKey);
 
 const id = getParam("id");
 const movieDetails = await tmdb.getMovieDetails(id);
+if (!movieDetails) {
+  showError("Movie not found");
+  window.location.href = base;
+  throw new Error("Movie not found");
+}
 
 const youtube = new YouTube(youtubeApiKey, movieDetails.title);
 const trailerUrl = await youtube.getTrailer();
@@ -103,4 +110,9 @@ const displayMovieDetails = (movie, trailerUrl) => {
   originCountry.textContent = movie.origin_country.join(" | ");
 };
 
+const similarMovies = await tmdb.getSimilarMovies(id);
+const genresArray = await tmdb.getGenres();
+const genreMap = Object.fromEntries(genresArray.map((g) => [g.id, g.name]));
+
 displayMovieDetails(movieDetails, trailerUrl);
+displayMovies(similarMovies, "template", genreMap, "#similar-movies");

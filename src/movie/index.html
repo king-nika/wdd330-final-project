@@ -65,6 +65,21 @@
                 <p id="origin-country" class="text-sm sm:text-sm md:text-lg lg:text-xl font-semibold"></p>
             </div>
         </section>
+
+        <section class="my-4 p-4 bg-[rgba(255,255,255,0.1)] rounded-2xl shadow-lg">
+            <h1 class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">Similar Movies</h1>
+            <div id="similar-movies" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+                <template>
+                    <a href="movie/" id="container"
+                        class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+                        <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+                            <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+                            <p class="text-black text-sm"></p>
+                        </div>
+                    </a>
+                </template>
+            </div>
+        </section>
     </main>
 
     <footer id="footer"></footer>
