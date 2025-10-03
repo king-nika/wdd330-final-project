@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/wdd330-final-project/assets/movie-CSCPsP8w.js"></script>
-  <link rel="modulepreload" crossorigin href="/wdd330-final-project/assets/TMDB-b6D5NP6K.js">
-  <link rel="stylesheet" crossorigin href="/wdd330-final-project/assets/TMDB-BRrVu8yO.css">
+  <script type="module" crossorigin src="/wdd330-final-project/assets/movie-CjlwB-pM.js"></script>
+  <link rel="modulepreload" crossorigin href="/wdd330-final-project/assets/TMDB-Sv2i2YPq.js">
+  <link rel="stylesheet" crossorigin href="/wdd330-final-project/assets/TMDB-CZ_fm4LV.css">
 </head>
 <body class="dark-angular-gradient min-h-screen">
     <header class="container mx-auto" id="header"></header>
@@ -64,6 +64,21 @@
 
                 <h2 class="font-bold text-sm sm:text-lg md:text-xl lg:text-2xl mt-4 mb-2">Production Country</h2>
                 <p id="origin-country" class="text-sm sm:text-sm md:text-lg lg:text-xl font-semibold"></p>
+            </div>
+        </section>
+
+        <section class="my-4 p-4 bg-[rgba(255,255,255,0.1)] rounded-2xl shadow-lg">
+            <h1 class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">Similar Movies</h1>
+            <div id="similar-movies" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+                <template>
+                    <a href="movie/" id="container"
+                        class="min-h-80 bg-cover bg-center rounded-2xl border border-white overflow-hidden relative">
+                        <div class="glass-blur-gradient w-full absolute bottom-0 p-4">
+                            <h1 class="font-semibold text-lg text-black line-clamp-1"></h1>
+                            <p class="text-black text-sm"></p>
+                        </div>
+                    </a>
+                </template>
             </div>
         </section>
     </main>
